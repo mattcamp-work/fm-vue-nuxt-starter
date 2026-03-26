@@ -1,146 +1,3 @@
-<script setup lang="ts">
-import { nextTick, onMounted } from 'vue'
-
-const {
-  public: { siteName, siteDescription }
-} = useRuntimeConfig()
-
-useSeoMeta({
-  title: siteName,
-  description: siteDescription
-})
-
-onMounted(async () => {
-  await nextTick()
-
-  const container = document.querySelector('.container-fixed')
-  const grid = document.querySelector('.grid-row')
-  const matt = document.querySelector('.matt')
-  const inlineUtilitySection = document.querySelector('[data-debug-inline-utility]')
-
-  // #region agent log
-  fetch('http://127.0.0.1:7479/ingest/c3d3a665-ba54-4522-8811-1840f35d7676', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Debug-Session-Id': 'cdf822'
-    },
-    body: JSON.stringify({
-      sessionId: 'cdf822',
-      runId: 'initial',
-      hypothesisId: 'H3',
-      location: 'app/pages/index.vue:16',
-      message: 'DOM targets present for Tailwind apply debug',
-      data: {
-        containerExists: Boolean(container),
-        gridExists: Boolean(grid),
-        mattExists: Boolean(matt),
-        containerClass: container?.getAttribute('class'),
-        gridClass: grid?.getAttribute('class'),
-        mattClass: matt?.getAttribute('class')
-      },
-      timestamp: Date.now()
-    })
-  }).catch(() => {})
-  // #endregion
-
-  const bodyStyle = window.getComputedStyle(document.body)
-
-  // #region agent log
-  fetch('http://127.0.0.1:7479/ingest/c3d3a665-ba54-4522-8811-1840f35d7676', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Debug-Session-Id': 'cdf822'
-    },
-    body: JSON.stringify({
-      sessionId: 'cdf822',
-      runId: 'initial',
-      hypothesisId: 'H1',
-      location: 'app/pages/index.vue:37',
-      message: 'Global SCSS computed styles',
-      data: {
-        bodyMarginTop: bodyStyle.marginTop,
-        bodyColor: bodyStyle.color,
-        bodyBackgroundImage: bodyStyle.backgroundImage,
-        bodyFontFamily: bodyStyle.fontFamily
-      },
-      timestamp: Date.now()
-    })
-  }).catch(() => {})
-  // #endregion
-
-  const mattStyle = matt ? window.getComputedStyle(matt) : null
-  const gridStyle = grid ? window.getComputedStyle(grid) : null
-  const containerStyle = container ? window.getComputedStyle(container) : null
-  const inlineUtilityStyle = inlineUtilitySection
-    ? window.getComputedStyle(inlineUtilitySection)
-    : null
-  const emittedRuleDetails = Array.from(document.styleSheets).flatMap((sheet) => {
-    try {
-      return Array.from(sheet.cssRules)
-        .filter((rule): rule is CSSStyleRule => 'selectorText' in rule)
-        .filter((rule) =>
-          ['.matt', '.grid-row', '.container-fixed'].some((target) =>
-            String(rule.selectorText || '').includes(target)
-          )
-        )
-        .map((rule) => ({
-          selector: rule.selectorText,
-          cssText: rule.cssText
-        }))
-    } catch {
-      return []
-    }
-  })
-  const emittedSelectors = Array.from(document.styleSheets)
-    .flatMap((sheet) => {
-      try {
-        return Array.from(sheet.cssRules).map((rule) =>
-          'selectorText' in rule ? String(rule.selectorText || '') : ''
-        )
-      } catch {
-        return []
-      }
-    })
-    .filter(Boolean)
-    .filter((selector) =>
-      ['.matt', '.grid-row', '.container-fixed'].some((target) => selector.includes(target))
-    )
-
-  // #region agent log
-  fetch('http://127.0.0.1:7479/ingest/c3d3a665-ba54-4522-8811-1840f35d7676', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Debug-Session-Id': 'cdf822'
-    },
-    body: JSON.stringify({
-      sessionId: 'cdf822',
-      runId: 'initial',
-      hypothesisId: 'H1-H2-H4',
-      location: 'app/pages/index.vue:74',
-      message: 'Tailwind apply rule emission and computed result',
-      data: {
-        emittedSelectors,
-        mattBackgroundColor: mattStyle?.backgroundColor,
-        mattPaddingTop: mattStyle?.paddingTop,
-        gridDisplay: gridStyle?.display,
-        gridTemplateColumns: gridStyle?.gridTemplateColumns,
-        containerMaxWidth: containerStyle?.maxWidth,
-        containerBorderTopWidth: containerStyle?.borderTopWidth,
-        containerPaddingLeft: containerStyle?.paddingLeft,
-        inlineUtilityMaxWidth: inlineUtilityStyle?.maxWidth,
-        inlineUtilityDisplay: inlineUtilityStyle?.display,
-        inlineUtilityRuleDetails: emittedRuleDetails
-      },
-      timestamp: Date.now()
-    })
-  }).catch(() => {})
-  // #endregion
-})
-</script>
-
 <template>
   <main>
     <div class="container-fixed">
@@ -151,7 +8,7 @@ onMounted(async () => {
             Hello world
           </div>
 
-      <section data-debug-inline-utility class="max-w-3xl space-y-6">
+      <section class="max-w-3xl space-y-6">
         <span
           class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-slate-200"
         >
@@ -209,3 +66,33 @@ onMounted(async () => {
     </div>
   </main>
 </template>
+
+
+
+<script lang="ts">
+import { defineNuxtComponent, useRuntimeConfig } from '#imports'
+
+export default defineNuxtComponent({
+  data() {
+    const _runtimeConfig = useRuntimeConfig()
+
+    return {
+      siteName: _runtimeConfig.public.siteName,
+      siteDescription: _runtimeConfig.public.siteDescription
+    }
+  },
+  head() {
+    const _runtimeConfig = useRuntimeConfig()
+
+    return {
+      title: _runtimeConfig.public.siteName,
+      meta: [
+        {
+          name: 'description',
+          content: _runtimeConfig.public.siteDescription
+        }
+      ]
+    }
+  }
+})
+</script>
