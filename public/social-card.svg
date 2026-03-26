@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#020617" />
+  <rect x="48" y="48" width="1104" height="534" rx="32" fill="#0f172a" />
+  <circle cx="998" cy="140" r="152" fill="#4f46e5" fill-opacity=".18" />
+  <circle cx="1068" cy="520" r="196" fill="#06b6d4" fill-opacity=".12" />
+  <text
+    x="96"
+    y="246"
+    fill="#f8fafc"
+    font-family="Inter, Arial, sans-serif"
+    font-size="68"
+    font-weight="700"
+  >
+    Nuxt Starter
+  </text>
+  <text
+    x="96"
+    y="332"
+    fill="#cbd5e1"
+    font-family="Inter, Arial, sans-serif"
+    font-size="34"
+  >
+    Tailwind CSS, PrimeVue, Pinia, and SEO-friendly defaults
+  </text>
+  <text
+    x="96"
+    y="490"
+    fill="#818cf8"
+    font-family="Inter, Arial, sans-serif"
+    font-size="30"
+    font-weight="600"
+  >
+    Ready for local development at localhost:3000
+  </text>
+</svg>
