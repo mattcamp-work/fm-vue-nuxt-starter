@@ -1,4 +1,4 @@
-import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { ref, readonly, hasInjectionContext, getCurrentInstance, nextTick, watch, defineComponent, createElementBlock, shallowRef, provide, cloneVNode, h, defineAsyncComponent, inject, computed, unref, shallowReactive, Suspense, Fragment, createApp, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, reactive, effectScope, mergeProps, getCurrentScope, toRef, withCtx, isReadonly, toValue, toRaw, useSSRContext, isRef, isShallow, isReactive, markRaw } from 'vue';
+import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { hasInjectionContext, inject, ref, readonly, getCurrentInstance, nextTick, watch, defineComponent, createElementBlock, shallowRef, provide, cloneVNode, h, defineAsyncComponent, computed, unref, shallowReactive, Suspense, Fragment, createApp, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, reactive, effectScope, mergeProps, getCurrentScope, toRef, withCtx, isReadonly, toValue, toRaw, useSSRContext, isRef, isShallow, isReactive, markRaw } from 'vue';
 import { k as parseURL, l as encodePath, m as decodePath, n as hasProtocol, o as isScriptProtocol, j as joinURL, w as withQuery, s as sanitizeStatusCode, q as getContext, $ as $fetch, r as baseURL, t as defu, e as createError$1, v as executeAsync, x as hash } from '../nitro/nitro.mjs';
 import { setActivePinia, createPinia, shouldHydrate } from 'pinia';
 import { useRoute as useRoute$1, RouterView, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
@@ -114,6 +114,7 @@ import '@primevue/forms/formfield/style';
 import '@primeuix/styles/tooltip';
 import '@primeuix/styles/ripple';
 import 'node:url';
+import 'ipx';
 
 //#region src/utils.ts
 function flatHooks(configHooks, hooks = {}, parentName) {
@@ -698,7 +699,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-DwgV1vkL.mjs')
+    component: () => import('./index-OxHZ0k10.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -2907,7 +2908,10 @@ const __nuxt_component_1 = defineComponent({
   }
 });
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-Eh7JcByX.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-CCyDH59q.mjs').then((m) => m.default || m)),
+  empty: defineAsyncComponent(() => import('./empty-Dqg3L0h7.mjs').then((m) => m.default || m)),
+  "logged-in": defineAsyncComponent(() => import('./logged-in-D2dUwyms.mjs').then((m) => m.default || m)),
+  "user-flow": defineAsyncComponent(() => import('./user-flow-C7hlvpjf.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;
 const LayoutLoader = defineComponent({
@@ -3277,5 +3281,5 @@ let entry;
 }
 const entry_default = ((ssrContext) => entry(ssrContext));
 
-export { BaseStyle as B, ConfirmationEventBus as C, DynamicDialogEventBus as D, FilterService as F, PrimeVueService as P, ToastEventBus as T, _export_sfc as _, useNuxtApp as a, useRouter as b, nuxtLinkDefaults as c, FilterMatchMode as d, entry_default as default, encodeRoutePath as e, FilterOperator as f, navigateTo as n, resolveRouteObject as r, useRuntimeConfig as u };
+export { BaseStyle as B, ConfirmationEventBus as C, DynamicDialogEventBus as D, FilterService as F, PrimeVueService as P, ToastEventBus as T, _export_sfc as _, useNuxtApp as a, useRouter as b, nuxtLinkDefaults as c, FilterMatchMode as d, entry_default as default, encodeRoutePath as e, FilterOperator as f, useRoute as g, navigateTo as n, resolveRouteObject as r, useRuntimeConfig as u };
 //# sourceMappingURL=server.mjs.map

@@ -114,6 +114,7 @@ import '@primevue/forms/form/style';
 import '@primevue/forms/formfield/style';
 import '@primeuix/styles/tooltip';
 import 'node:url';
+import 'ipx';
 import 'pinia';
 import 'vue-router';
 import 'perfect-debounce';

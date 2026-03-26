@@ -108,6 +108,7 @@ import '@primeuix/styles/tooltip';
 import '@primeuix/styles/ripple';
 import '@primeuix/styled';
 import 'node:url';
+import 'ipx';
 import 'pinia';
 import 'vue-router';
 import 'perfect-debounce';

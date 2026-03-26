@@ -109,6 +109,7 @@ import '@primevue/forms/formfield/style';
 import '@primeuix/styles/tooltip';
 import '@primeuix/styles/ripple';
 import 'node:url';
+import 'ipx';
 import 'pinia';
 import 'vue-router';
 import 'perfect-debounce';

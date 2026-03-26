@@ -1,5 +1,4 @@
 import process from 'node:process'
-import tailwindcss from '@tailwindcss/vite'
 import Aura from '@primeuix/themes/aura'
 
 const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000'
@@ -14,14 +13,14 @@ const absoluteSocialImage = new URL(siteSocialImage, siteUrl).toString()
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@pinia/nuxt', '@primevue/nuxt-module'],
+  nitro: {
+    preset: 'vercel-edge',
+  },
+  logLevel: 'silent',
   css: [
     '~/assets/scss/main.scss',
     'primeicons/primeicons.css'
   ],
-  vite: {
-    plugins: [tailwindcss()]
-  },
   app: {
     head: {
       htmlAttrs: {
@@ -46,6 +45,12 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }]
     }
   },
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@primevue/nuxt-module',
+    '@pinia/nuxt',
+    '@nuxt/image'
+  ],
   runtimeConfig: {
     public: {
       siteUrl,
@@ -58,6 +63,15 @@ export default defineNuxtConfig({
     strict: true,
     typeCheck: true
   },
+  imports: {
+    dirs: ['utils']
+  },
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false // nuxt will turn off their folder+component naming convention
+    }
+  ],
   primevue: {
     options: {
       ripple: true,
@@ -66,7 +80,7 @@ export default defineNuxtConfig({
         preset: Aura,
         options: {
           prefix: 'p',
-          darkModeSelector: 'system',
+          darkModeSelector: 'none',
           cssLayer: false
         }
       }

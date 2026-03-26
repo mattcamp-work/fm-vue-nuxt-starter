@@ -104,7 +104,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/744c1784-6437-49dd-b0b1-ccaa3b372fc8.json"
+        "./manifest/meta/dev"
       ],
       "#components": [
         "./components"
@@ -174,8 +174,10 @@
   "exclude": [
     "../node_modules",
     "../node_modules/nuxt/node_modules",
-    "../node_modules/@pinia/nuxt/node_modules",
+    "../node_modules/@nuxtjs/tailwindcss/node_modules",
     "../node_modules/@primevue/nuxt-module/node_modules",
+    "../node_modules/@pinia/nuxt/node_modules",
+    "../node_modules/@nuxt/image/node_modules",
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../dist",

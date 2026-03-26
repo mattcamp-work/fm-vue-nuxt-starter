@@ -104,4 +104,5 @@ import '@primeuix/styles/tooltip';
 import '@primeuix/styles/ripple';
 import '@primeuix/styled';
 import 'node:url';
+import 'ipx';
 //# sourceMappingURL=index.mjs.map
