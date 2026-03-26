@@ -2,13 +2,10 @@
   <main>
     <div class="container-fixed">
       <div class="grid-row">
-        <div class="col-span-12">
+        <div class="col-span-12 flex flex-col gap-6">
 
-          <div class="matt">
-            Hello world
-          </div>
 
-      <section class="max-w-3xl space-y-6">
+      <section class="flex flex-col gap-6">
         <span
           class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-slate-200"
         >
@@ -60,6 +57,7 @@
         </Card>
       </section>
     
+        
         </div>
       </div>
 
@@ -82,14 +80,12 @@ export default defineNuxtComponent({
     }
   },
   head() {
-    const _runtimeConfig = useRuntimeConfig()
-
     return {
-      title: _runtimeConfig.public.siteName,
+      title: this.siteName,
       meta: [
         {
           name: 'description',
-          content: _runtimeConfig.public.siteDescription
+          content: this.siteDescription
         }
       ]
     }
