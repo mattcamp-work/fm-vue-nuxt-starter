@@ -5,7 +5,7 @@ STACK + STYLE
 -------------
 - Write simple, human readable code
 - Follow Nuxt / Vue conventions.
-- Use PrimeNG components before building custom components.
+- Use PrimeVue components before building custom components.
 - Use Tailwind CSS for layout, spacing, and styling.
 - If Tailwind class strings become long or repetitive:
   - Move them into <style scoped> using the @apply construct.
