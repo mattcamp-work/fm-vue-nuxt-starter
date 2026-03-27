@@ -26,7 +26,7 @@ Instead of re-deciding layout patterns, styling approach, metadata defaults, and
 
 ## Quick Start
 
-Install dependencies:
+Install these dependencies:
 
 ```bash
 npm install
