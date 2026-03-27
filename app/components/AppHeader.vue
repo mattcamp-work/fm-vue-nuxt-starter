@@ -1,8 +1,3 @@
-<script setup lang="ts">
-const {
-  public: { siteName }
-} = useRuntimeConfig()
-</script>
 
 <template>
   <header class="border-b border-c-whisper bg-slate-100 ">
@@ -27,3 +22,11 @@ const {
     </div>
   </header>
 </template>
+
+
+<script setup lang="ts">
+const {
+  public: { siteName }
+} = useRuntimeConfig()
+</script>
+

@@ -20,7 +20,6 @@ module.exports = {
         '2xs': '.6875rem',
       },
       backgroundColor:{
-        'surface':'hsl(0,0,98%)',
       },
       borderColor:{
         'c-strong':'rgba(0,0,0,.35)',

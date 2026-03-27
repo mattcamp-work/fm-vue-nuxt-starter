@@ -1,11 +1,3 @@
-<script setup lang="ts">
-const {
-  public: { siteName }
-} = useRuntimeConfig()
-
-const year = new Date().getFullYear()
-</script>
-
 <template>
   <footer class="border-t border-c-whisper bg-slate-100">
     <div
@@ -16,3 +8,12 @@ const year = new Date().getFullYear()
     </div>
   </footer>
 </template>
+
+
+<script setup lang="ts">
+const {
+  public: { siteName }
+} = useRuntimeConfig()
+
+const year = new Date().getFullYear()
+</script>
