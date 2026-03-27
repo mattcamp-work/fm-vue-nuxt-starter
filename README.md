@@ -2,7 +2,23 @@
 
 A practical Nuxt 4 starter for building apps without spending your first hour wiring the same stuff together again.
 
+This is a stack that sped up my development by 50%.
+
 It gives you a solid default stack, a predictable project shape, and a coding-guidelines file that helps both humans and AI move faster with fewer weird decisions.
+
+## Simple TOC
+
+- `what-you-get`: the defaults that are already wired up
+- `why-this-starter-exists`: why this setup is faster than starting from scratch
+- `quick-start`: install, run, and get moving
+- `build-commands`: build, preview, and generate commands
+- `environment-variables`: the public metadata values you will want to change first
+- `coding-guidelines-save-time`: prevent your code assistant from yak shaving on JSON, TypeScript, and byzantine `if` statement blocks
+- `tailwind-3`: already configured and ready to use
+- `everything-else`: PrimeVue, Pinia, Nuxt Image, SCSS, TypeScript, and metadata defaults
+- `project-map`: where the main files live
+- `good-first-edits`: the first changes most projects make
+- `notes`: a few useful implementation details
 
 ## What You Get
 
