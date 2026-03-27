@@ -117,6 +117,14 @@ If you are working with AI in this repo, the guidelines are especially useful be
 
 Tailwind CSS `3.4.x` is already installed and configured through `@nuxtjs/tailwindcss`.
 
+We are intentional about using Tailwind 3 in this starter.
+
+It is more stable for this setup, provides better support for the `@apply` construct, and it just plain works.
+
+Tailwind 4 is good, but it still has some weirdness with Vue 3 and Nuxt 4 in real-world projects.
+
+We will migrate to Tailwind 4 when the rest of the stack matures enough to support it cleanly end to end.
+
 That means:
 
 - utility classes are available immediately
